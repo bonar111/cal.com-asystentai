@@ -5,7 +5,7 @@ services:
     repo: https://github.com/bonar111/cal.com-asystentai
     branch: main
     buildCommand: yarn install && yarn build
-    startCommand: yarn start
+    startCommand: node server.js
     plan: free
     envVars:
       - key: DATABASE_URL
@@ -16,6 +16,8 @@ services:
         generateValue: true
       - key: NEXTAUTH_URL
         value: https://calcom.onrender.com
+      - key: NEXT_PUBLIC_API_V2_URL
+        value: https://calcom.onrender.com/api/v2
       - key: POSTGRES_PRISMA_URL
         fromDatabase:
           name: calcom-db
@@ -29,21 +31,21 @@ services:
           name: calcom-db
           property: connectionString
       - key: REDIS_URL
-        value: redis://not-needed-but-required.com
+        value: redis://not-used
       - key: CALENDSO_ENCRYPTION_KEY
         generateValue: true
       - key: NODE_ENV
         value: production
       - key: MAIL_FROM
-        value: hello@calcom.app
+        value: test@example.com
       - key: SMTP_HOST
         value: smtp.example.com
       - key: SMTP_PORT
         value: 587
       - key: SMTP_USERNAME
-        value: your_smtp_username
+        value: fakeuser
       - key: SMTP_PASSWORD
-        value: your_smtp_password
+        value: fakepassword
 
 databases:
   - name: calcom-db
