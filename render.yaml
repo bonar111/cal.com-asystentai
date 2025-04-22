@@ -18,6 +18,12 @@ services:
         value: https://calcom.onrender.com
       - key: NEXT_PUBLIC_API_V2_URL
         value: https://calcom.onrender.com/api/v2
+      - key: NEXT_PUBLIC_APP_URL
+        value: https://calcom.onrender.com
+      - key: NEXT_PUBLIC_WEBAPP_URL
+        value: https://calcom.onrender.com
+      - key: NEXT_PUBLIC_BASE_URL
+        value: https://calcom.onrender.com
       - key: POSTGRES_PRISMA_URL
         fromDatabase:
           name: calcom-db
