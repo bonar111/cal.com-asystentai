@@ -2,7 +2,7 @@ services:
   - type: web
     name: calcom
     env: node
-    repo: https://github.com/bonar111/cal.com
+    repo: https://github.com/bonar111/cal.com-asystentai
     branch: main
     buildCommand: yarn build
     startCommand: yarn start
