@@ -5,9 +5,8 @@ services:
     repo: https://github.com/bonar111/cal.com-asystentai
     branch: main
     buildCommand: |
-  node --max_old_space_size=2048 $(yarn bin)/yarn install
-  node --max_old_space_size=2048 $(yarn bin)/yarn build
-
+      yarn install
+      NODE_OPTIONS="--max-old-space-size=2048" yarn build
     startCommand: node server.js
     plan: free
     envVars:
